@@ -12,7 +12,7 @@ contract FeeCollector {
     receive() payable external {
         balance += msg.value;
     }
-
+    
     function withdraw (uint amount, address payable destAddr) public {
         require(msg.sender == owner, "Only owner can withdraw");
         require(amount <= balance, "Insufficient funds");
